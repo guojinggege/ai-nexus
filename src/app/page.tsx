@@ -12,6 +12,7 @@ import { getLatestPosts } from "@/data/blog";
 import BlogCard from "@/components/BlogCard";
 import CategoryCard from "@/components/CategoryCard";
 import ToolCard from "@/components/ToolCard";
+import Link from "next/link";
 
 export default function HomePage() {
   const [query, setQuery] = useState("");
@@ -117,9 +118,9 @@ export default function HomePage() {
               Short, practical reads on tools, agents, GPT, Claude, and automation.
             </p>
           </div>
-          <a href="/blog" className="text-sm text-white/80 hover:text-white">
+          <Link href="/blog" className="text-sm text-white/80 hover:text-white">
             Read the blog →
-          </a>
+          </Link>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
