@@ -1,19 +1,20 @@
 import Logo from "./Logo";
+import Link from "next/link";
 
 const sections = [
   {
     title: "Product",
     links: [
-      { label: "Discover", href: "#discover" },
-      { label: "Categories", href: "#categories" },
-      { label: "Submit a tool", href: "#submit" },
+      { label: "Discover", href: "/#discover" },
+      { label: "Categories", href: "/#categories" },
+      { label: "Submit a tool", href: "/submit" },
       { label: "API", href: "#" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Blog", href: "#blog" },
+      { label: "Blog", href: "/blog" },
       { label: "Newsletter", href: "#" },
       { label: "Changelog", href: "#" },
       { label: "Brand kit", href: "#" },
@@ -42,22 +43,19 @@ export default function Footer() {
               AI Nexus is a curated directory of the most powerful AI tools — built for
               builders, makers and the curious. New tools added every week.
             </p>
-            <form
-              className="mt-5 flex max-w-sm items-center gap-2"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <div className="mt-5 flex max-w-sm items-center gap-2">
               <input
                 type="email"
                 placeholder="you@domain.com"
                 className="flex-1 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm placeholder:text-[var(--muted)] focus:border-indigo-400/60 focus:outline-none"
               />
               <button
-                type="submit"
+                type="button"
                 className="rounded-md bg-gradient-to-r from-indigo-500 to-cyan-400 px-3 py-2 text-sm font-medium text-white"
               >
                 Subscribe
               </button>
-            </form>
+            </div>
           </div>
 
           {sections.map((s) => (
@@ -66,12 +64,21 @@ export default function Footer() {
               <ul className="mt-3 space-y-2">
                 {s.links.map((l) => (
                   <li key={l.label}>
-                    <a
-                      href={l.href}
-                      className="text-sm text-[var(--muted)] transition hover:text-white"
-                    >
-                      {l.label}
-                    </a>
+                    {l.href.startsWith("/") ? (
+                      <Link
+                        href={l.href}
+                        className="text-sm text-[var(--muted)] transition hover:text-white"
+                      >
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={l.href}
+                        className="text-sm text-[var(--muted)] transition hover:text-white"
+                      >
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

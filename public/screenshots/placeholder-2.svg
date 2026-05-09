@@ -1,0 +1,44 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050714"/>
+      <stop offset="0.45" stop-color="#0B1024"/>
+      <stop offset="1" stop-color="#111733"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="220" y1="200" x2="1380" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0.75"/>
+      <stop offset="0.5" stop-color="#6366F1" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#A855F7" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" rx="40" fill="url(#bg2)"/>
+
+  <rect x="120" y="110" width="1360" height="780" rx="28" fill="#0B1024" stroke="#1F2747" stroke-width="2"/>
+  <rect x="120" y="110" width="1360" height="72" rx="28" fill="#111733"/>
+  <circle cx="170" cy="146" r="8" fill="#F87171"/>
+  <circle cx="198" cy="146" r="8" fill="#FBBF24"/>
+  <circle cx="226" cy="146" r="8" fill="#34D399"/>
+
+  <!-- large highlight -->
+  <rect x="180" y="230" width="1240" height="240" rx="26" fill="url(#accent2)" opacity="0.22" stroke="#2D3766"/>
+  <rect x="220" y="290" width="520" height="18" rx="9" fill="#E6E9FF" opacity="0.18"/>
+  <rect x="220" y="326" width="420" height="18" rx="9" fill="#E6E9FF" opacity="0.14"/>
+  <rect x="220" y="362" width="600" height="18" rx="9" fill="#E6E9FF" opacity="0.12"/>
+
+  <!-- cards -->
+  <rect x="180" y="500" width="390" height="250" rx="22" fill="#111733" stroke="#1F2747"/>
+  <rect x="605" y="500" width="390" height="250" rx="22" fill="#111733" stroke="#1F2747"/>
+  <rect x="1030" y="500" width="390" height="250" rx="22" fill="#111733" stroke="#1F2747"/>
+
+  <rect x="220" y="542" width="240" height="14" rx="7" fill="#2D3766"/>
+  <rect x="220" y="576" width="200" height="14" rx="7" fill="#253058"/>
+  <rect x="645" y="542" width="240" height="14" rx="7" fill="#2D3766"/>
+  <rect x="645" y="576" width="200" height="14" rx="7" fill="#253058"/>
+  <rect x="1070" y="542" width="240" height="14" rx="7" fill="#2D3766"/>
+  <rect x="1070" y="576" width="200" height="14" rx="7" fill="#253058"/>
+
+  <text x="180" y="840" fill="#8B93B8" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial" font-size="26">
+    Screenshot placeholder (cards)
+  </text>
+</svg>

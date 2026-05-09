@@ -1,5 +1,6 @@
 import { categories } from "@/data/categories";
 import type { Tool } from "@/data/tools";
+import Link from "next/link";
 
 const badgeStyles: Record<NonNullable<Tool["badge"]>, string> = {
   Featured: "bg-indigo-500/15 text-indigo-300 ring-indigo-400/30",
@@ -7,7 +8,7 @@ const badgeStyles: Record<NonNullable<Tool["badge"]>, string> = {
   Hot: "bg-rose-500/15 text-rose-300 ring-rose-400/30",
 };
 
-const pricingStyles: Record<Tool["pricing"], string> = {
+const pricingStyles: Record<Tool["pricing"]["model"], string> = {
   Free: "text-emerald-300",
   Freemium: "text-cyan-300",
   Paid: "text-amber-300",
@@ -17,12 +18,7 @@ export default function ToolCard({ tool }: { tool: Tool }) {
   const category = categories.find((c) => c.id === tool.category);
 
   return (
-    <a
-      href={tool.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="card-hover group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5 backdrop-blur"
-    >
+    <div className="card-hover group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5 backdrop-blur">
       <div
         className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition group-hover:opacity-100"
         aria-hidden
@@ -37,7 +33,12 @@ export default function ToolCard({ tool }: { tool: Tool }) {
           </div>
           <div>
             <h3 className="text-base font-semibold leading-tight text-white">
-              {tool.name}
+              <Link
+                href={`/tools/${tool.slug}`}
+                className="outline-none focus-visible:underline"
+              >
+                {tool.name}
+              </Link>
             </h3>
             <p className="text-xs text-[var(--muted)]">{tool.tagline}</p>
           </div>
@@ -61,26 +62,51 @@ export default function ToolCard({ tool }: { tool: Tool }) {
             <span aria-hidden>{category?.icon}</span>
             <span className="capitalize">{category?.name ?? tool.category}</span>
           </span>
-          <span className={`font-medium ${pricingStyles[tool.pricing]}`}>
-            {tool.pricing}
+          <span className={`font-medium ${pricingStyles[tool.pricing.model]}`}>
+            {tool.pricing.model}
           </span>
         </div>
-        <span className="inline-flex items-center gap-1 text-white/80 transition group-hover:text-white">
-          Visit
-          <svg
-            viewBox="0 0 24 24"
-            className="h-3.5 w-3.5 transition group-hover:translate-x-0.5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div className="flex items-center gap-2">
+          <Link
+            href={`/tools/${tool.slug}`}
+            className="inline-flex items-center gap-1 text-white/80 transition hover:text-white"
           >
-            <path d="M7 17L17 7" />
-            <path d="M8 7h9v9" />
-          </svg>
-        </span>
+            Details
+            <svg
+              viewBox="0 0 24 24"
+              className="h-3.5 w-3.5 transition group-hover:translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="M13 6l6 6-6 6" />
+            </svg>
+          </Link>
+          <a
+            href={tool.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-white/80 transition hover:text-white"
+          >
+            Visit
+            <svg
+              viewBox="0 0 24 24"
+              className="h-3.5 w-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </a>
+    </div>
   );
 }

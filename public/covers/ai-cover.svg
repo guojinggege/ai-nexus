@@ -1,0 +1,26 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#22D3EE" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#A855F7" stop-opacity="0.4"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 210) rotate(35) scale(920 620)">
+      <stop stop-color="#E6E9FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#050714" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" rx="40" fill="#050714"/>
+  <rect width="1600" height="900" rx="40" fill="url(#g)"/>
+  <rect width="1600" height="900" rx="40" fill="url(#r)"/>
+  <g opacity="0.65">
+    <path d="M120 720C320 560 420 560 620 720C820 880 980 880 1180 720C1380 560 1500 560 1520 580" stroke="#E6E9FF" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M120 660C340 520 460 520 680 660C900 800 1040 800 1260 660C1480 520 1540 520 1520 540" stroke="#E6E9FF" stroke-opacity="0.12" stroke-width="2"/>
+  </g>
+  <text x="96" y="148" fill="#E6E9FF" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial" font-size="40" font-weight="600" opacity="0.85">
+    AI Nexus Blog
+  </text>
+  <text x="96" y="208" fill="#8B93B8" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial" font-size="22" opacity="0.85">
+    Insights on AI tools, agents, coding, and automation
+  </text>
+</svg>
